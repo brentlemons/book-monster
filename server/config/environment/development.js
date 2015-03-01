@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/bookmonster-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

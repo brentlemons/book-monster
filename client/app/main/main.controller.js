@@ -2,21 +2,21 @@
 
 angular.module('bookMonsterApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.awesomeBooks = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    $http.get('/api/books').success(function(awesomeBooks) {
+      $scope.awesomeBooks = awesomeBooks;
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addBook = function() {
+      if($scope.newBook === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/books', { name: $scope.newBook });
+      $scope.newBook = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteBook = function(book) {
+      $http.delete('/api/books/' + book._id);
     };
   });
